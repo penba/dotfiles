@@ -12,8 +12,8 @@ vim.o.autoindent = true
 vim.o.smartindent = true
 vim.o.smarttab = true
 
-vim.o.swapfile = false
 vim.o.clipboard = "unnamedplus"
+vim.o.swapfile = false
 vim.o.backup = false
 vim.o.swapfile = false
 vim.o.undofile = false
