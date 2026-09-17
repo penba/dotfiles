@@ -5,4 +5,6 @@ end
 function fish_greeting
 end
 
+abbr -a ls ls -A
+
 zoxide init --cmd cd fish | source
