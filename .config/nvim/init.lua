@@ -25,11 +25,11 @@ vim.o.linebreak = true
 vim.g.mapleader = " "
 
 vim.pack.add({
-	{ src = "https://github.com/aktersnurra/no-clown-fiesta.nvim" }, 
+	{ src = "https://github.com/rebelot/kanagawa.nvim" }, 
 	{ src = "https://github.com/nvim-lualine/lualine.nvim" },
 })
 
-vim.cmd.colorscheme("no-clown-fiesta")
+vim.cmd.colorscheme("kanagawa-dragon")
 
 require("lualine").setup {
 	options = {
