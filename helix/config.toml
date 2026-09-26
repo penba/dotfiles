@@ -1,6 +1,7 @@
 theme = "gruber-darker"
 
 [editor]
+editor-config = true
 line-number = "relative"
 mouse = true
 
@@ -8,3 +9,7 @@ mouse = true
 insert = "bar"
 normal = "block"
 select = "block"
+
+[editor.soft-wrap]
+enable = true
+wrap-indicator = ""
