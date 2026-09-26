@@ -1,5 +1,19 @@
 #!/usr/bin/env sh
 
-ln -s $PWD/helix $HOME/.config/helix
-ln -s $PWD/fish $HOME/.config/fish
-ln -s $PWD/ghostty $HOME/.config/ghostty
+set -e
+
+link() {
+  target="$HOME/.config/$1"
+  if [ -e  "$target" ] || [ -L "$target" ]; then
+    printf "%s already exists\n" "$target"
+  else
+    ln -s "$PWD/$1" "$target"
+    printf "Linked %s to %s\n" "$1" "$target"
+  fi
+}
+
+mkdir -p "$HOME/.config"
+
+link helix
+link fish
+link ghostty
