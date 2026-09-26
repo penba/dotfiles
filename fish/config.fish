@@ -1,3 +1,5 @@
-if status is-interactive
-# Commands to run in interactive sessions can go here
+if not status is-interactive
+    return
 end
+
+set -g fish_greeting
