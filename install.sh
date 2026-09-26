@@ -37,6 +37,5 @@ mkdir -p "$HOME/.config"
 link user helix
 link user fish
 link user ghostty
-link user editorconfig.ini "$HOME/.editorconfig"
 
 link system keyd.conf "/etc/keyd/default.conf"
