@@ -1,0 +1,9 @@
+theme = Gruber Darker
+
+font-family = Iosevka
+font-feature = -calt, -liga, -dlig
+font-size = 20
+
+maximize = true
+
+bell-features = no-audio, no-attention, no-title, no-system, no-border
