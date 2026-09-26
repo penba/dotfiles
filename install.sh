@@ -3,22 +3,39 @@
 set -e
 
 link() {
-  if [ -n "$2" ]; then
-    target="$2"
+  if [ -n "$3" ]; then
+    target="$3"
   else
-    target="$HOME/.config/$1"
+    target="$HOME/.config/$2"
   fi
 
   if [ -e  "$target" ] || [ -L "$target" ]; then
     printf "%s already exists\n" "$target"
   else
-    ln -s "$PWD/$1" "$target"
-    printf "Linked %s to %s\n" "$1" "$target"
+    if [ "$1" = "user" ]; then
+      ln -s "$PWD/$2" "$target"
+      printf "Linked %s to %s\n" "$2" "$target"
+    elif [ "$1" = "system" ]; then
+      printf "Root privileges are required to link to %s\n" "$target"
+      printf "Continue [y/N]: "
+      read -r confirm
+      case "$confirm" in
+        y|Y)
+          sudo ln -s "$PWD/$2" "$target"
+          printf "Linked %s to %s\n" "$2" "$target"
+          ;;
+        *)
+          printf "Aborted\n"
+          ;;
+      esac
+    fi
   fi
 }
 
 mkdir -p "$HOME/.config"
 
-link helix
-link fish
-link ghostty
+link user helix
+link user fish
+link user ghostty
+
+link system keyd.conf "/etc/keyd/default.conf"
