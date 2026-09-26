@@ -3,7 +3,12 @@
 set -e
 
 link() {
-  target="$HOME/.config/$1"
+  if [ -n "$2" ]; then
+    target="$2"
+  else
+    target="$HOME/.config/$1"
+  fi
+
   if [ -e  "$target" ] || [ -L "$target" ]; then
     printf "%s already exists\n" "$target"
   else
