@@ -1,7 +1,6 @@
 theme = "gruber-darker"
 
 [editor]
-editor-config = true
 line-number = "relative"
 mouse = true
 
