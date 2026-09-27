@@ -9,3 +9,9 @@ font-size = 20
 maximize = true
 
 bell-features = no-audio, no-attention, no-title, no-system, no-border
+
+title = " "
+
+window-padding-x = 5
+window-padding-y = 5
+window-padding-balance = true
