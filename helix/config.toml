@@ -2,6 +2,7 @@ theme = "gruber-darker"
 
 [editor]
 line-number = "relative"
+popup-border = "all"
 auto-format = false
 mouse = true
 
