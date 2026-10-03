@@ -15,10 +15,10 @@ main() {
 link() {
 	scope="$1"
 	source="$2"
-	custom_path="$3"
+	custom_target="$3"
 
-	if [ -n "$custom_path" ]; then
-		target="$custom_path"
+	if [ -n "$custom_target" ]; then
+		target="$custom_target"
 	else
 		target="$HOME/.config/$source"
 	fi
