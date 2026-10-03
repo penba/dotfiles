@@ -2,6 +2,16 @@
 
 set -e
 
+main() {
+	mkdir -p "$HOME/.config"
+
+	link user helix
+	link user fish
+	link user ghostty
+
+	link system keyd.conf "/etc/keyd/default.conf"
+}
+
 link() {
 	scope="$1"
 	source="$2"
@@ -43,10 +53,4 @@ link() {
 	esac
 }
 
-mkdir -p "$HOME/.config"
-
-link user helix
-link user fish
-link user ghostty
-
-link system keyd.conf "/etc/keyd/default.conf"
+main
