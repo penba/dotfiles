@@ -4,6 +4,7 @@ theme = "gruber-darker"
 line-number = "relative"
 popup-border = "all"
 auto-format = false
+auto-pairs = false
 mouse = true
 
 [editor.cursor-shape]
