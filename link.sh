@@ -3,36 +3,36 @@
 set -e
 
 link() {
-	required_permissions="$1"
-	folder_name="$2"
+	scope="$1"
+	source="$2"
 	custom_path="$3"
 
 	if [ -n "$custom_path" ]; then
-		target_path="$custom_path"
+		target="$custom_path"
 	else
-		target_path="$HOME/.config/$folder_name"
+		target="$HOME/.config/$source"
 	fi
 
-	if [ -e	 "$target_path" ] || [ -L "$target_path" ]; then
-		printf "%s already exists. Skipping.\n" "$target_path"
+	if [ -e	 "$target" ] || [ -L "$target" ]; then
+		printf "%s already exists. Skipping.\n" "$target"
 		return 0;
 	fi
 
-	case "$required_permissions" in
+	case "$scope" in
 		user)
-			ln -s "$PWD/$folder_name" "$target_path"
-			printf "Successfully linked %s to %s\n." "$folder_name" "$target_path"
+			ln -s "$PWD/$source" "$target"
+			printf "Successfully linked %s to %s\n." "$source" "$target"
 			;;
 
 		system)
-			printf "Root privileges are required to link to %s\n." "$target_path"
+			printf "Root privileges are required to link to %s\n." "$target"
 			printf "Continue? [y/N]: "
 			read -r confirm_character
 
 			case "$confirm_character" in
 				y|Y)
-					sudo ln -s "$PWD/$folder_name" "$target_path"
-					printf "Successfully linked %s to %s\n." "$folder_name" "$target_path"
+					sudo ln -s "$PWD/$source" "$target"
+					printf "Successfully linked %s to %s\n." "$source" "$target"
 					;;
 
 				*)
