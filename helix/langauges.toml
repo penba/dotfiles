@@ -1,3 +1,11 @@
 [[language]]
 name = "c"
 file-types = ["c", "h"]
+
+[[language]]
+name = "java"
+language-servers = ["jdtls"]
+
+[language-server.jdtls.config]
+"java.compiler.sourceLevel" = "27"
+"java.compiler.releaseLevel" = "27"
